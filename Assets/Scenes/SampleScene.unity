@@ -7063,7 +7063,6 @@ GameObject:
   - component: {fileID: 1016547415}
   - component: {fileID: 1016547414}
   - component: {fileID: 1016547416}
-  - component: {fileID: 1016547417}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Untagged
@@ -7122,7 +7121,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!4 &1016547415
 Transform:
   m_ObjectHideFlags: 0
@@ -7154,55 +7153,51 @@ MonoBehaviour:
     m_Name: Move
     m_Type: 0
     m_ExpectedControlType: Vector2
-    m_Id: 0aeee450-a01f-4de0-a5f3-62fa2dafd177
+    m_Id: 30cd1b40-19d3-499b-9fd5-21d17c0c43d3
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
---- !u!114 &1016547417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1016547413}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 621567455fd1c4ceb811cc8a00b6a1a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_NotificationBehavior: 0
-  m_MaxPlayerCount: -1
-  m_AllowJoining: 1
-  m_JoinBehavior: 0
-  m_PlayerJoinedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_PlayerLeftEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_JoinAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: 
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 111b7ea6-6256-4e7e-8978-c8b1537865b4
-      m_Processors: 
+    m_SingletonActionBindings:
+    - m_Name: 2D Vector
+      m_Id: a7293af3-e2f2-409d-a374-ec8cc84e68af
+      m_Path: 2DVector
       m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  m_PlayerPrefab: {fileID: 0}
-  m_SplitScreen: 0
-  m_MaintainAspectRatioInSplitScreen: 0
-  m_FixedNumberOfSplitScreens: -1
-  m_SplitScreenRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 4
+    - m_Name: up
+      m_Id: c4edbbfe-6047-4299-9976-78c240723b31
+      m_Path: <Keyboard>/upArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: down
+      m_Id: ce65b99f-1f75-4e2b-b5f8-d53251e65ea1
+      m_Path: <Keyboard>/downArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: left
+      m_Id: ad4e8556-1898-4276-a171-99e0b77d2d2f
+      m_Path: <Keyboard>/leftArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: right
+      m_Id: c3762d0a-60bc-4232-b958-8e7c00c71d1d
+      m_Path: <Keyboard>/rightArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    m_Flags: 0
 --- !u!1001 &1142219234
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29087,5 +29082,5 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 2058537354}
-  - {fileID: 1422486407}
   - {fileID: 1016547415}
+  - {fileID: 1422486407}
