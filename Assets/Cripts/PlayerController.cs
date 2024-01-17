@@ -7,9 +7,12 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rigidbody2D;
+    public int maxHealth = 5;
+    int currentHealth=1;
+    public float speed = 6.0f;
     Vector2 move;
     public InputAction MoveAction;
-    internal object CurrentStairs;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +20,7 @@ public class PlayerController : MonoBehaviour
         
         MoveAction.Enable();
         rigidbody2D = GetComponent<Rigidbody2D>();
-        
+        //currentHealth = maxHealth;
 
     }
 
@@ -27,9 +30,15 @@ public class PlayerController : MonoBehaviour
         move = MoveAction.ReadValue<Vector2>();
         Debug.Log(move);
     }
+    
     void FixedUpdate()
     {
-        Vector2 position = (Vector2)transform.position + move * 5.0f * Time.deltaTime;
+        Vector2 position = (Vector2)transform.position + move * speed * Time.deltaTime;
         rigidbody2D.MovePosition(position);
+    }
+    public void ChangeHealth(int amount)
+    {
+        currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+        Debug.Log(currentHealth + "/" + maxHealth);
     }
 }
