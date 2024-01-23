@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3284677724787625948}
   - component: {fileID: 996757613629418613}
   - component: {fileID: 4521593256279417144}
+  - component: {fileID: 4465743524226198700}
   m_Layer: 0
   m_Name: player_6
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 892389020124880677}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.810726, y: 0.7089467, z: 0.14115262}
+  m_LocalPosition: {x: -1.13, y: 0.55, z: 0.14115262}
   m_LocalScale: {x: 4.3414164, y: 3.736896, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -158,6 +159,69 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.15, y: 0.21}
   m_EdgeRadius: 0
+--- !u!114 &4465743524226198700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892389020124880677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d437da3c39395d46aeabf86f47e685c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  speed: 6
+  MoveAction:
+    m_Name: Move
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 608b0027-0a05-48d3-9762-46bd51bf6db8
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 2D Vector
+      m_Id: 69255c14-f491-4385-9086-235d0bba52d5
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 4
+    - m_Name: up
+      m_Id: 171a954f-d278-4ebe-b13c-0f07c4d6e536
+      m_Path: <Keyboard>/upArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: down
+      m_Id: 4b8a5aec-6b59-4d2e-8fda-b074d1b21533
+      m_Path: <Keyboard>/downArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: left
+      m_Id: 1ab530e0-c424-416d-9b68-d5d0f3db4ddd
+      m_Path: <Keyboard>/leftArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: right
+      m_Id: 69c8c55c-b1aa-4e9c-9277-b0db99997f65
+      m_Path: <Keyboard>/rightArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    m_Flags: 0
 --- !u!1 &8062809887634537801
 GameObject:
   m_ObjectHideFlags: 0

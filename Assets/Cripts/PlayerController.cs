@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 6.0f;
     Vector2 move;
     public InputAction MoveAction;
-   
+    public int health { get { return currentHealth; } }
 
     // Start is called before the first frame update
     void Start()
@@ -28,12 +28,12 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         move = MoveAction.ReadValue<Vector2>();
-        Debug.Log(move);
+        
     }
     
     void FixedUpdate()
     {
-        Vector2 position = (Vector2)transform.position + move * speed * Time.deltaTime;
+        Vector2 position = (Vector2)rigidbody2D.position + move * speed * Time.deltaTime;
         rigidbody2D.MovePosition(position);
     }
     public void ChangeHealth(int amount)
