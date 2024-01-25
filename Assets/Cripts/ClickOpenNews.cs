@@ -1,28 +1,57 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Text;
+using System;
 
-public class ClickOpenNews : MonoBehaviour
+public class NewsManager : MonoBehaviour
 {
-    public GameObject OpenNews;
-    private Button button;
-    // Start is called before the first frame update
-    void Start()
+    public Text notificationText;
+
+    
+
+    private string[] notifications;
+    private int currentIndex = 0;
+
+    private void Start()
     {
-        button = OpenNews.GetComponent<Button>();
+        Console.OutputEncoding = Encoding.UTF8;
+        // Initialize your news articles.
+        notifications = new string[]
+        {
+            "              ",
+            "Happy New years. ",
+            "game sẽ được DEMO " +"vào 8/2024 ",
+            
+            // Add more articles as needed.
+        };
+
+        // Display the initial news article.
+        ShowNotification();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.G)) 
+        // Example: Switch to the next article on space key press.
+        if (Input.GetKeyDown(KeyCode.G))
         {
-            button.onClick.Invoke();
+            ShowNextNotification();
         }
     }
-    public void QuitApp()
+
+    private void ShowNextNotification()
     {
-        UnityEditor.EditorApplication.isPlaying = false;
+        currentIndex = (currentIndex + 1) % notifications.Length;
+        ShowNotification();
+    }
+
+    private void ShowNotification()
+    {
+        if (notificationText != null)
+        {
+            // Display the current news article.
+            notificationText.text = notifications[currentIndex];
+        }
     }
 }
