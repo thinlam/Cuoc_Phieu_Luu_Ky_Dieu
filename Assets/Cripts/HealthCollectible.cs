@@ -7,7 +7,7 @@ public class HealthCollectible : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D other)
     {
-        PlayerController controller = other.GetComponent<PlayerController>();
+        PlayerHealth controller = other.GetComponent<PlayerHealth>();
 
         if(controller != null && controller.health < controller.maxHealth)
         {
