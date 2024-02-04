@@ -22494,9 +22494,9 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.033333335
     y: 0
-    width: 1
+    width: 0.9333334
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -23131,6 +23131,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2108397038598386063, guid: 33672f579d7ffbd4c83e1291812acaeb, type: 3}
+      propertyPath: m_Name
+      value: Nude_Idle_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2290122669980564495, guid: 33672f579d7ffbd4c83e1291812acaeb, type: 3}
+      propertyPath: timeInvincible
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680303990799455829, guid: 33672f579d7ffbd4c83e1291812acaeb, type: 3}
+      propertyPath: m_Size.x
+      value: 0.72808933
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680303990799455829, guid: 33672f579d7ffbd4c83e1291812acaeb, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.0046868324
+      objectReference: {fileID: 0}
     - target: {fileID: 6072135405632938370, guid: 33672f579d7ffbd4c83e1291812acaeb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.81

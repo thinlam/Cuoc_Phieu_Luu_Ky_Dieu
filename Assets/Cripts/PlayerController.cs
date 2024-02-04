@@ -9,13 +9,10 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     public float speed = 6.0f;
     Rigidbody2D rigidbody2D;
+    private Vector2 input;
+    private Vector2 lastMoveDirection;
+    private bool facingleft = true;
     
-    float horizontal;
-    float vertical;
-    public float timeInvincible = 2.0f;
-    bool isInvincible;
-    float invincibleTimer;
-    Vector2 lookDirection = new Vector2(1, 0);
     // Start is called before the first frame update
     void Start()
     {
@@ -27,26 +24,51 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("Vertical");
-
-        Vector2 move = new Vector2(horizontal, vertical);
-        if (!Mathf.Approximately(move.x, 0.0f) || !Mathf.Approximately(move.y, 0.0f))
+        //proccessInput
+        ProccessInputs();
+        //Animate
+        Animate();
+        // flip
+        if(input.x <0 && !facingleft || input.x >0 && facingleft)
         {
-            lookDirection.Set(move.x, move.y);
-            lookDirection.Normalize();
+            Flip();
         }
+        
 
-        animator.SetFloat("Look X", lookDirection.x);
-        animator.SetFloat("Look Y", lookDirection.y);
-        animator.SetFloat("Speed", move.magnitude);
     }
     void FixedUpdate()
     {
-        Vector2 position = rigidbody2D.position;
-        position.x = position.x + speed * horizontal * Time.deltaTime;
-        position.y = position.y + speed * vertical * Time.deltaTime;
+        rigidbody2D.velocity = input* speed;
+    }
+    void ProccessInputs()
+    {
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
 
-        rigidbody2D.MovePosition(position);
+        if((moveX == 0 && moveY == 0) && (input.x !=0 || input.y !=0))
+        {
+            lastMoveDirection = input;
+        }
+
+        input.x = Input.GetAxisRaw("Horizontal");
+        input.y = Input.GetAxisRaw("Vertical");
+
+        input.Normalize();
+    }
+    void Animate()
+    {
+        animator.SetFloat("MoveX", input.x);
+        animator.SetFloat("MoveY", input.y);
+        animator.SetFloat("MoveMagnitude", input.magnitude);
+        animator.SetFloat("LastMoveX", lastMoveDirection.x);
+        animator.SetFloat("LastMoveY", lastMoveDirection.y);
+
+    }
+    void Flip()
+    {
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
+        facingleft = !facingleft;
     }
 }
