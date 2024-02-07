@@ -2,16 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
-using static UnityEditor.Searcher.SearcherWindow.Alignment;
+
 
 public class PlayerController : MonoBehaviour
 {
-    Animator animator;
-    public float speed = 6.0f;
+    
+    public float speed = 0.5f;
     Rigidbody2D rigidbody2D;
     private Vector2 input;
+    Animator animator;
     private Vector2 lastMoveDirection;
-    private bool facingleft = true;
+    private bool facingLeft = true;
+    public VectorValue startingPosition;
+    
     
     // Start is called before the first frame update
     void Start()
@@ -19,6 +22,7 @@ public class PlayerController : MonoBehaviour
         rigidbody2D = GetComponent<Rigidbody2D>();
         
         animator = GetComponent<Animator>();
+        transform.position = startingPosition.initialValue;
     }
 
     // Update is called once per frame
@@ -29,16 +33,16 @@ public class PlayerController : MonoBehaviour
         //Animate
         Animate();
         // flip
-        if(input.x <0 && !facingleft || input.x >0 && facingleft)
+        if(input.x < 0 && !facingLeft || input.x > 0 && facingLeft)
         {
             Flip();
         }
         
 
     }
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-        rigidbody2D.velocity = input* speed;
+        rigidbody2D.velocity=input * speed;
     }
     void ProccessInputs()
     {
@@ -67,8 +71,8 @@ public class PlayerController : MonoBehaviour
     void Flip()
     {
         Vector3 scale = transform.localScale;
-        scale.x *= -1;
+        scale.x *= 1;
         transform.localScale = scale;
-        facingleft = !facingleft;
+        facingLeft = !facingLeft;
     }
 }

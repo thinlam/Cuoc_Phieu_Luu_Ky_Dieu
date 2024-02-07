@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4623785999667659057}
   m_Layer: 0
   m_Name: Nude_Idle_2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,8 +77,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -1602313560, guid: 21985298d9f80f440892d1a0aa3ef826, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 428597250, guid: 21985298d9f80f440892d1a0aa3ef826, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,8 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd73926857fc394d9ec5fc7cde6520f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
-  timeInvincible: 2
+  speed: 0.5
+  startingPosition: {fileID: 11400000, guid: 14f1c512afb81e14d81e125633b19f9f, type: 2}
 --- !u!114 &2875037213168289975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,18 +148,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.5753051}
+  m_Offset: {x: -0.0046868324, y: 0.5753051}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 0.6875, y: 1.125}
+    oldSize: {x: 0.4375, y: 1.125}
     newSize: {x: 0.4375, y: 1.125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.4375, y: 1.1506102}
+  m_Size: {x: 0.72808933, y: 1.1506102}
   m_EdgeRadius: 0
 --- !u!50 &7183754513160959210
 Rigidbody2D:
@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 6072135405632938370}
   m_Layer: 0
   m_Name: Player 2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
