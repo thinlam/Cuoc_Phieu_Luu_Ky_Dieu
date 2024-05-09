@@ -1,14 +1,14 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed;
-    private Rigidbody2D rigidbody2D;
-    private Vector3 change;
-    private Animator animator;
+    public float speed; //tạo tốc độ nhân vật
+    private Rigidbody2D rigidbody2D; //
+    private Vector3 change; //tạo di chuyển 
+    private Animator animator; //tạo chuyển động 
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        change = Vector3.zero;
+        change = Vector3.zero; // nhân vật bắt đầu từ 0 
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
         UpdateAnimationAndMove();

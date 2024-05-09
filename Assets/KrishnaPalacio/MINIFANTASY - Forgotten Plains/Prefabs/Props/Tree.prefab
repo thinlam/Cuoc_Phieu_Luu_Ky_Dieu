@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -7
-  m_Sprite: {fileID: -8184837761918644901, guid: da4d732596845594e9b99bf9488ee15f, type: 3}
+  m_Sprite: {fileID: -5767133754201675963, guid: da4d732596845594e9b99bf9488ee15f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -157,8 +157,8 @@ Transform:
   m_GameObject: {fileID: 3407742962269140667}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -2.48, y: 1.33, z: 0}
+  m_LocalScale: {x: 1.1741, y: 1.1672, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8667505787639551814}
@@ -205,7 +205,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1339536321328131832, guid: be785b53e8101134cb49e391918a7a82, type: 3}
+  m_Sprite: {fileID: -3953209486756653526, guid: be785b53e8101134cb49e391918a7a82, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -248,7 +248,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.30915996}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -259,7 +259,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.625, y: 3.125}
+  m_Size: {x: 2.625, y: 2.50668}
   m_EdgeRadius: 0
 --- !u!114 &2844890326175171305
 MonoBehaviour:
@@ -273,7 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c6f80182aefb134a991b24abd3c00b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selection: 0
+  selection: 1
   treeApples: {fileID: 1339536321328131832, guid: be785b53e8101134cb49e391918a7a82, type: 3}
   treeNoApples: {fileID: -3953209486756653526, guid: be785b53e8101134cb49e391918a7a82, type: 3}
   shadowTreeApples: {fileID: -8184837761918644901, guid: da4d732596845594e9b99bf9488ee15f, type: 3}
