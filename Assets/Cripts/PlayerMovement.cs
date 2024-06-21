@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed; //tạo tốc độ nhân vật
-    private Rigidbody2D rigidbody2D; //
+    private Rigidbody2D rigidbody2D; //vật cản 
     private Vector3 change; //tạo di chuyển 
     private Animator animator; //tạo chuyển động 
     // Start is called before the first frame update
